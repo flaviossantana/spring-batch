@@ -8,16 +8,16 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class ImprimeOlaStepConfig {
+public class ImprimeOlaMundoStepConfig {
 
     @Autowired
     private StepBuilderFactory stepBuilderFactory;
 
     @Bean
-    public Step imprimeOlaStep(Tasklet imprimeOlaTasklet) {
+    public Step imprimeOlaMundoStep(Tasklet imprimeOlaMundoTasklet) {
         return stepBuilderFactory
-                .get("imprimeOlaStep")
-                .tasklet(imprimeOlaTasklet)
+                .get("imprimeOlaMundoStep")
+                .tasklet(imprimeOlaMundoTasklet)
                 .build();
     }
 

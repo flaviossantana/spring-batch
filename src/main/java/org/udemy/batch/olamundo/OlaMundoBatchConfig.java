@@ -17,10 +17,10 @@ public class OlaMundoBatchConfig {
     private JobBuilderFactory jobBuilderFactory;
 
     @Bean
-    public Job imprimeOlaJob(Step imprimeOlaStep){
+    public Job imprimeOlaMundoJob(Step imprimeOlaMundoStepConfig){
         return jobBuilderFactory
-                .get("imprimeOlaJob")
-                .start(imprimeOlaStep)
+                .get("imprimeOlaMundoJob")
+                .start(imprimeOlaMundoStepConfig)
                 .incrementer(new RunIdIncrementer())
                 .build();
     }
