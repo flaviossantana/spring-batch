@@ -1,0 +1,26 @@
+2023-11-23 18:50:50,068 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] Starting IniciandoSpringBatchMavenApplication using Java 11.0.16 on MacBook-Pro.local with PID 7215 (/Users/flaviosantana/desv/wks/udemy/spring-batch/iniciando-spring-batch/target/classes started by flaviosantana in /Users/flaviosantana/desv/wks/udemy/spring-batch/iniciando-spring-batch)
+2023-11-23 18:50:50,071 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-11-23 18:50:50,851 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-11-23 18:50:50,931 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-11-23 18:50:50,944 WARN o.m.j.m.s.ErrorPacket [main] Error: 1050-42S01: Table 'BATCH_JOB_INSTANCE' already exists
+2023-11-23 18:50:50,946 WARN o.m.j.m.s.ErrorPacket [main] Error: 1050-42S01: Table 'BATCH_JOB_EXECUTION' already exists
+2023-11-23 18:50:50,947 WARN o.m.j.m.s.ErrorPacket [main] Error: 1050-42S01: Table 'BATCH_JOB_EXECUTION_PARAMS' already exists
+2023-11-23 18:50:50,948 WARN o.m.j.m.s.ErrorPacket [main] Error: 1050-42S01: Table 'BATCH_STEP_EXECUTION' already exists
+2023-11-23 18:50:50,948 WARN o.m.j.m.s.ErrorPacket [main] Error: 1050-42S01: Table 'BATCH_STEP_EXECUTION_CONTEXT' already exists
+2023-11-23 18:50:50,949 WARN o.m.j.m.s.ErrorPacket [main] Error: 1050-42S01: Table 'BATCH_JOB_EXECUTION_CONTEXT' already exists
+2023-11-23 18:50:50,950 WARN o.m.j.m.s.ErrorPacket [main] Error: 1050-42S01: Table 'BATCH_STEP_EXECUTION_SEQ' already exists
+2023-11-23 18:50:50,951 WARN o.m.j.m.s.ErrorPacket [main] Error: 1050-42S01: Table 'BATCH_JOB_EXECUTION_SEQ' already exists
+2023-11-23 18:50:50,954 WARN o.m.j.m.s.ErrorPacket [main] Error: 1050-42S01: Table 'BATCH_JOB_SEQ' already exists
+2023-11-23 18:50:51,047 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2023-11-23 18:50:51,224 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2023-11-23 18:50:51,309 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] Started IniciandoSpringBatchMavenApplication in 1.901 seconds (JVM running for 4.086)
+2023-11-23 18:50:51,423 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeOlaMundoJob]] launched with the following parameters: [{run.id=8, nome=Flavio}]
+2023-11-23 18:50:51,468 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [imprimeOlaMundoStep]
+2023-11-23 18:50:51,496 INFO o.s.b.c.s.AbstractStep [main] Step: [imprimeOlaMundoStep] executed in 27ms
+2023-11-23 18:50:51,519 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeOlaMundoJob]] completed with the following parameters: [{run.id=8, nome=Flavio}] and the following status: [COMPLETED] in 73ms
+2023-11-23 18:50:51,610 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeParOuImparJob]] launched with the following parameters: [{run.id=8, nome=Flavio}]
+2023-11-23 18:50:51,642 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [imprimeParOuImparStep]
+2023-11-23 18:50:51,766 INFO o.s.b.c.s.AbstractStep [main] Step: [imprimeParOuImparStep] executed in 123ms
+2023-11-23 18:50:51,782 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeParOuImparJob]] completed with the following parameters: [{run.id=8, nome=Flavio}] and the following status: [COMPLETED] in 164ms
+2023-11-23 18:50:51,788 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-11-23 18:50:51,797 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
