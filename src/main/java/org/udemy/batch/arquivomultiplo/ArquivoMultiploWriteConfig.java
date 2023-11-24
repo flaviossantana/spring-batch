@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class ArquivoMultiploWriteConfig {
 
     @Bean
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public ItemWriter arquivoMultiploWrite(){
         return itens -> itens.forEach(System.out::println);
     }
