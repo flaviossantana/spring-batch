@@ -1,4 +1,4 @@
-package org.udemy.batch.aquivolargurafixa;
+package org.udemy.batch.arquivodemilitado;
 
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
@@ -10,23 +10,22 @@ import org.springframework.context.annotation.Configuration;
 import org.udemy.batch.dto.Cliente;
 
 @Configuration
-public class LeituraArquivoLarguraFixaStepConfig {
+public class ArquivoDemilitadoStepConfig {
 
     @Autowired
     private StepBuilderFactory stepBuilderFactory;
 
     @Bean
-    public Step leituraArquivoLarguraFixa(
-            ItemReader<Cliente> leituraArquivoLarguraFixaReader,
-            ItemWriter<Cliente> leituraArquivoLarguraFixaWrite){
+    public Step arquivoDemilitadoStep(
+            ItemReader<Cliente> arquivoDemilitadoReader,
+            ItemWriter<Cliente> arquivoDemilitadoWrite) {
 
-        return stepBuilderFactory
-                .get("arquivoLarguraFixaStep")
+        return this.stepBuilderFactory
+                .get("arquivoDemilitadoStep")
                 .<Cliente, Cliente>chunk(1)
-                .reader(leituraArquivoLarguraFixaReader)
-                .writer(leituraArquivoLarguraFixaWrite)
+                .reader(arquivoDemilitadoReader)
+                .writer(arquivoDemilitadoWrite)
                 .build();
     }
-
 
 }

@@ -1,9 +1,8 @@
-package org.udemy.batch.aquivolargurafixa;
+package org.udemy.batch.arquivodemilitado;
 
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
-import org.springframework.batch.item.file.transform.Range;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,31 +10,22 @@ import org.springframework.core.io.Resource;
 import org.udemy.batch.dto.Cliente;
 
 @Configuration
-public class LeituraArquivoLarguraFixaReaderConfig {
+public class ArquivoDemilitadoReaderConfig {
 
     @Bean
     @StepScope
-    public FlatFileItemReader<Cliente> leituraArquivoLarguraFixaReader(
-            @Value("#{jobParameters['arquivoCliente']}") Resource arquivo
-    ) {
+    public FlatFileItemReader<Cliente> arquivoDemilitadoReader(
+            @Value("#{jobParameters['arquivoClienteDelimitado']}") Resource arquivo
+    ){
 
         return new FlatFileItemReaderBuilder<Cliente>()
-                .name("leituraArquivoLarguraFixa")
+                .name("arquivoDemilitadoReader")
                 .resource(arquivo)
-                .fixedLength()
-                .columns(definePosicaoFixaColunas())
+                .delimited()
                 .names("nome", "sobrenome", "idade", "email")
                 .targetType(Cliente.class)
                 .build();
-    }
 
-    private Range[] definePosicaoFixaColunas() {
-        return new Range[]{
-                new Range(1, 10),
-                new Range(11, 20),
-                new Range(21, 23),
-                new Range(24, 43)};
     }
-
 
 }

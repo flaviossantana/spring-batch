@@ -1,4 +1,4 @@
-package org.udemy.batch.aquivolargurafixa;
+package org.udemy.batch.arquivodemilitado;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -11,16 +11,16 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableBatchProcessing
-public class ArquivoLarguraFixaBatchConfig {
+public class ArquivoDemilitadoBatchConfig {
 
     @Autowired
     private JobBuilderFactory jobBuilderFactory;
 
     @Bean
-    public Job arquivoLarguraFixaBatch(Step leituraArquivoLarguraFixa){
+    public Job arquivoDemilitadoBatch(Step arquivoDemilitadoStep){
         return jobBuilderFactory
-                .get("arquivoLarguraFixaBatch")
-                .start(leituraArquivoLarguraFixa)
+                .get("arquivoDemilitadoBatch")
+                .start(arquivoDemilitadoStep)
                 .incrementer(new RunIdIncrementer())
                 .build();
     }
