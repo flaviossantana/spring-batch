@@ -1,4 +1,4 @@
-package org.udemy.batch.aquivolargurafixa.dto;
+package org.udemy.batch.dto;
 
 import lombok.Data;
 

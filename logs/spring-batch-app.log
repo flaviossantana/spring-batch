@@ -792,3 +792,24 @@ Caused by: java.lang.IllegalStateException: Input resource must exist (reader is
 2023-11-24 15:56:07,439 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeParOuImparJob]] completed with the following parameters: [{nome=Flavio, run.id=21, arquivoCliente=arquivos/clientes.txt}] and the following status: [COMPLETED] in 160ms
 2023-11-24 15:56:07,446 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
 2023-11-24 15:56:07,456 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-11-24 16:00:36,132 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] Starting IniciandoSpringBatchMavenApplication using Java 11.0.16 on MacBook-Pro.local with PID 11513 (/Users/flaviosantana/desv/wks/udemy/spring-batch/iniciando-spring-batch/target/classes started by flaviosantana in /Users/flaviosantana/desv/wks/udemy/spring-batch/iniciando-spring-batch)
+2023-11-24 16:00:36,136 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-11-24 16:00:36,942 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-11-24 16:00:37,076 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-11-24 16:00:37,090 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2023-11-24 16:00:37,243 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2023-11-24 16:00:37,336 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] Started IniciandoSpringBatchMavenApplication in 1.698 seconds (JVM running for 3.275)
+2023-11-24 16:00:37,489 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaBatch]] launched with the following parameters: [{run.id=11, arquivoCliente=arquivos/clientes.txt}]
+2023-11-24 16:00:37,545 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [arquivoLarguraFixaStep]
+2023-11-24 16:00:37,656 INFO o.s.b.c.s.AbstractStep [main] Step: [arquivoLarguraFixaStep] executed in 110ms
+2023-11-24 16:00:37,673 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaBatch]] completed with the following parameters: [{run.id=11, arquivoCliente=arquivos/clientes.txt}] and the following status: [COMPLETED] in 147ms
+2023-11-24 16:00:37,713 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeOlaMundoJob]] launched with the following parameters: [{nome=Flavio, run.id=22, arquivoCliente=arquivos/clientes.txt}]
+2023-11-24 16:00:37,736 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [arquivoLarguraFixaStep]
+2023-11-24 16:00:37,775 INFO o.s.b.c.s.AbstractStep [main] Step: [arquivoLarguraFixaStep] executed in 39ms
+2023-11-24 16:00:37,791 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeOlaMundoJob]] completed with the following parameters: [{nome=Flavio, run.id=22, arquivoCliente=arquivos/clientes.txt}] and the following status: [COMPLETED] in 72ms
+2023-11-24 16:00:37,836 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeParOuImparJob]] launched with the following parameters: [{nome=Flavio, run.id=22, arquivoCliente=arquivos/clientes.txt}]
+2023-11-24 16:00:37,856 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [imprimeParOuImparStep]
+2023-11-24 16:00:37,940 INFO o.s.b.c.s.AbstractStep [main] Step: [imprimeParOuImparStep] executed in 83ms
+2023-11-24 16:00:37,953 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeParOuImparJob]] completed with the following parameters: [{nome=Flavio, run.id=22, arquivoCliente=arquivos/clientes.txt}] and the following status: [COMPLETED] in 111ms
+2023-11-24 16:00:37,960 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-11-24 16:00:37,971 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.

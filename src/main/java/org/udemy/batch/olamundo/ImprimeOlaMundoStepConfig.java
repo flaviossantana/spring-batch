@@ -1,4 +1,4 @@
-package org.udemy.batch.olamundo.step;
+package org.udemy.batch.olamundo;
 
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
