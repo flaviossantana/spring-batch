@@ -4269,3 +4269,208 @@ Caused by: java.lang.IllegalStateException: Input resource must exist (reader is
 2023-11-24 18:50:32,525 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeParOuImparJob]] completed with the following parameters: [{arquivoMultiploFormato=clientes-multiplos-formatos.txt, run.id=60, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivo=file:files\clientes.txt, nome=Flavio, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}] and the following status: [COMPLETED] in 142ms
 2023-11-24 18:50:32,531 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
 2023-11-24 18:50:32,539 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-11-29 18:38:09,057 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] Starting IniciandoSpringBatchMavenApplication using Java 11.0.16 on MacBook-Pro.local with PID 6300 (/Users/flaviosantana/desv/wks/udemy/spring-batch/iniciando-spring-batch/target/classes started by flaviosantana in /Users/flaviosantana/desv/wks/udemy/spring-batch/iniciando-spring-batch)
+2023-11-29 18:38:09,062 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-11-29 18:38:10,839 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-11-29 18:38:12,005 ERROR c.z.h.p.HikariPool [main] HikariPool-1 - Exception during pool initialization.
+java.sql.SQLNonTransientConnectionException: Socket fail to connect to host:address=(host=localhost)(port=3306)(type=primary). Connection refused (Connection refused)
+	at org.mariadb.jdbc.client.impl.ConnectionHelper.connectSocket(ConnectionHelper.java:136) ~[mariadb-java-client-3.3.0.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.<init>(StandardClient.java:101) ~[mariadb-java-client-3.3.0.jar:?]
+	at org.mariadb.jdbc.Driver.connect(Driver.java:69) ~[mariadb-java-client-3.3.0.jar:?]
+	at org.mariadb.jdbc.Driver.connect(Driver.java:95) ~[mariadb-java-client-3.3.0.jar:?]
+	at org.mariadb.jdbc.Driver.connect(Driver.java:26) ~[mariadb-java-client-3.3.0.jar:?]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-4.0.3.jar:?]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160) ~[spring-jdbc-5.3.30.jar:5.3.30]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118) ~[spring-jdbc-5.3.30.jar:5.3.30]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81) ~[spring-jdbc-5.3.30.jar:5.3.30]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:337) ~[spring-jdbc-5.3.30.jar:5.3.30]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:395) ~[spring-jdbc-5.3.30.jar:5.3.30]
+	at org.springframework.batch.support.DatabaseType.fromMetaData(DatabaseType.java:102) ~[spring-batch-infrastructure-4.3.9.jar:4.3.9]
+	at org.springframework.batch.core.repository.support.JobRepositoryFactoryBean.afterPropertiesSet(JobRepositoryFactoryBean.java:183) ~[spring-batch-core-4.3.9.jar:4.3.9]
+	at org.springframework.boot.autoconfigure.batch.BasicBatchConfigurer.createJobRepository(BasicBatchConfigurer.java:134) ~[spring-boot-autoconfigure-2.7.17.jar:2.7.17]
+	at org.springframework.boot.autoconfigure.batch.BasicBatchConfigurer.initialize(BasicBatchConfigurer.java:102) ~[spring-boot-autoconfigure-2.7.17.jar:2.7.17]
+	at org.springframework.boot.autoconfigure.batch.BasicBatchConfigurer.afterPropertiesSet(BasicBatchConfigurer.java:96) ~[spring-boot-autoconfigure-2.7.17.jar:2.7.17]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921) ~[spring-context-5.3.30.jar:5.3.30]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.30.jar:5.3.30]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:409) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.udemy.batch.IniciandoSpringBatchMavenApplication.main(IniciandoSpringBatchMavenApplication.java:10) ~[classes/:?]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:?]
+	at java.net.Socket.connect(Socket.java:608) ~[?:?]
+	at org.mariadb.jdbc.client.impl.ConnectionHelper.connectSocket(ConnectionHelper.java:130) ~[mariadb-java-client-3.3.0.jar:?]
+	... 38 more
+2023-11-29 18:38:12,024 WARN o.s.c.a.AnnotationConfigApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'batchConfigurer' defined in class path resource [org/springframework/boot/autoconfigure/batch/BatchConfigurerConfiguration$JdbcBatchConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Unable to initialize Spring Batch
+2023-11-29 18:39:32,950 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] Starting IniciandoSpringBatchMavenApplication using Java 11.0.16 on MacBook-Pro.local with PID 6370 (/Users/flaviosantana/desv/wks/udemy/spring-batch/iniciando-spring-batch/target/classes started by flaviosantana in /Users/flaviosantana/desv/wks/udemy/spring-batch/iniciando-spring-batch)
+2023-11-29 18:39:32,955 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-11-29 18:39:34,195 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-11-29 18:39:34,347 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-11-29 18:39:34,361 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2023-11-29 18:39:34,532 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2023-11-29 18:39:34,640 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] Started IniciandoSpringBatchMavenApplication in 2.347 seconds (JVM running for 4.674)
+2023-11-29 18:39:34,853 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaBatch]] launched with the following parameters: [{arquivoMultiploFormato=clientes-multiplos-formatos.txt, run.id=39, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}]
+2023-11-29 18:39:34,913 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [arquivoLarguraFixaStep]
+2023-11-29 18:39:35,030 INFO o.s.b.c.s.AbstractStep [main] Step: [arquivoLarguraFixaStep] executed in 116ms
+2023-11-29 18:39:35,050 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaBatch]] completed with the following parameters: [{arquivoMultiploFormato=clientes-multiplos-formatos.txt, run.id=39, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}] and the following status: [COMPLETED] in 158ms
+2023-11-29 18:39:35,127 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoDemilitadoBatch]] launched with the following parameters: [{arquivo=file:files\clientes.txt, arquivoMultiploFormato=clientes-multiplos-formatos.txt, run.id=38, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}]
+2023-11-29 18:39:35,149 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [arquivoDemilitadoStep]
+2023-11-29 18:39:35,199 INFO o.s.b.c.s.AbstractStep [main] Step: [arquivoDemilitadoStep] executed in 50ms
+2023-11-29 18:39:35,216 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoDemilitadoBatch]] completed with the following parameters: [{arquivo=file:files\clientes.txt, arquivoMultiploFormato=clientes-multiplos-formatos.txt, run.id=38, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}] and the following status: [COMPLETED] in 83ms
+2023-11-29 18:39:35,264 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoMultiploBatch]] launched with the following parameters: [{arquivoMultiploFormato=clientes-multiplos-formatos.txt, run.id=4, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}]
+2023-11-29 18:39:35,288 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [arquivoMultiploStep]
+2023-11-29 18:39:35,307 ERROR o.s.b.c.s.AbstractStep [main] Encountered an error executing step arquivoMultiploStep in job arquivoMultiploBatch
+org.springframework.batch.item.ItemStreamException: Failed to initialize the reader
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.open(AbstractItemCountingItemStreamItemReader.java:153) ~[spring-batch-infrastructure-4.3.9.jar:4.3.9]
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader$$FastClassBySpringCGLIB$$ebb633d0.invoke(<generated>) ~[spring-batch-infrastructure-4.3.9.jar:4.3.9]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.30.jar:5.3.30]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:792) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:762) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:137) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:762) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:707) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.batch.item.file.FlatFileItemReader$$EnhancerBySpringCGLIB$$1c434e99.open(<generated>) ~[spring-batch-infrastructure-4.3.9.jar:4.3.9]
+	at org.springframework.batch.item.support.CompositeItemStream.open(CompositeItemStream.java:104) ~[spring-batch-infrastructure-4.3.9.jar:4.3.9]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.open(TaskletStep.java:311) ~[spring-batch-core-4.3.9.jar:4.3.9]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:205) ~[spring-batch-core-4.3.9.jar:4.3.9]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:152) ~[spring-batch-core-4.3.9.jar:4.3.9]
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:413) ~[spring-batch-core-4.3.9.jar:4.3.9]
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) ~[spring-batch-core-4.3.9.jar:4.3.9]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320) ~[spring-batch-core-4.3.9.jar:4.3.9]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:149) ~[spring-batch-core-4.3.9.jar:4.3.9]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) ~[spring-core-5.3.30.jar:5.3.30]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) ~[spring-batch-core-4.3.9.jar:4.3.9]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128) ~[spring-batch-core-4.3.9.jar:4.3.9]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.30.jar:5.3.30]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:241) ~[spring-aop-5.3.30.jar:5.3.30]
+	at com.sun.proxy.$Proxy63.run(Unknown Source) ~[?:?]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:213) ~[spring-boot-autoconfigure-2.7.17.jar:2.7.17]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:193) ~[spring-boot-autoconfigure-2.7.17.jar:2.7.17]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:172) ~[spring-boot-autoconfigure-2.7.17.jar:2.7.17]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:167) ~[spring-boot-autoconfigure-2.7.17.jar:2.7.17]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:162) ~[spring-boot-autoconfigure-2.7.17.jar:2.7.17]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:756) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.springframework.boot.SpringApplication.lambda$callRunners$2(SpringApplication.java:746) ~[spring-boot-2.7.17.jar:2.7.17]
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183) ~[?:?]
+	at java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[?:?]
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150) ~[?:?]
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?]
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497) ~[?:?]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:744) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.udemy.batch.IniciandoSpringBatchMavenApplication.main(IniciandoSpringBatchMavenApplication.java:10) ~[classes/:?]
+Caused by: java.lang.IllegalStateException: Input resource must exist (reader is in 'strict' mode): class path resource [clientes-multiplos-formatos.txt]
+	at org.springframework.batch.item.file.FlatFileItemReader.doOpen(FlatFileItemReader.java:257) ~[spring-batch-infrastructure-4.3.9.jar:4.3.9]
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.open(AbstractItemCountingItemStreamItemReader.java:150) ~[spring-batch-infrastructure-4.3.9.jar:4.3.9]
+	... 52 more
+2023-11-29 18:39:35,375 INFO o.s.b.c.s.AbstractStep [main] Step: [arquivoMultiploStep] executed in 86ms
+2023-11-29 18:39:35,406 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoMultiploBatch]] completed with the following parameters: [{arquivoMultiploFormato=clientes-multiplos-formatos.txt, run.id=4, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}] and the following status: [FAILED] in 131ms
+2023-11-29 18:39:35,510 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeOlaMundoJob]] launched with the following parameters: [{arquivoMultiploFormato=clientes-multiplos-formatos.txt, run.id=61, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivo=file:files\clientes.txt, nome=Flavio, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}]
+2023-11-29 18:39:35,557 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [imprimeOlaMundoStep]
+2023-11-29 18:39:35,593 INFO o.s.b.c.s.AbstractStep [main] Step: [imprimeOlaMundoStep] executed in 36ms
+2023-11-29 18:39:35,628 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeOlaMundoJob]] completed with the following parameters: [{arquivoMultiploFormato=clientes-multiplos-formatos.txt, run.id=61, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivo=file:files\clientes.txt, nome=Flavio, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}] and the following status: [COMPLETED] in 102ms
+2023-11-29 18:39:35,689 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeParOuImparJob]] launched with the following parameters: [{arquivoMultiploFormato=clientes-multiplos-formatos.txt, run.id=61, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivo=file:files\clientes.txt, nome=Flavio, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}]
+2023-11-29 18:39:35,721 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [imprimeParOuImparStep]
+2023-11-29 18:39:35,847 INFO o.s.b.c.s.AbstractStep [main] Step: [imprimeParOuImparStep] executed in 126ms
+2023-11-29 18:39:35,880 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeParOuImparJob]] completed with the following parameters: [{arquivoMultiploFormato=clientes-multiplos-formatos.txt, run.id=61, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivo=file:files\clientes.txt, nome=Flavio, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}] and the following status: [COMPLETED] in 170ms
+2023-11-29 18:39:35,887 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-11-29 18:39:35,897 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-11-29 18:44:56,117 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] Starting IniciandoSpringBatchMavenApplication using Java 11.0.16 on MacBook-Pro.local with PID 6423 (/Users/flaviosantana/desv/wks/udemy/spring-batch/iniciando-spring-batch/target/classes started by flaviosantana in /Users/flaviosantana/desv/wks/udemy/spring-batch/iniciando-spring-batch)
+2023-11-29 18:44:56,124 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-11-29 18:44:57,270 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-11-29 18:44:57,371 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-11-29 18:44:57,383 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2023-11-29 18:44:57,523 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2023-11-29 18:44:57,649 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] Started IniciandoSpringBatchMavenApplication in 2.219 seconds (JVM running for 4.511)
+2023-11-29 18:44:58,000 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaBatch]] launched with the following parameters: [{arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=40, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}]
+2023-11-29 18:44:58,112 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [arquivoLarguraFixaStep]
+2023-11-29 18:44:58,391 INFO o.s.b.c.s.AbstractStep [main] Step: [arquivoLarguraFixaStep] executed in 275ms
+2023-11-29 18:44:58,429 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaBatch]] completed with the following parameters: [{arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=40, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}] and the following status: [COMPLETED] in 357ms
+2023-11-29 18:44:58,513 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoDemilitadoBatch]] launched with the following parameters: [{arquivo=file:files\clientes.txt, arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=39, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}]
+2023-11-29 18:44:58,556 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [arquivoDemilitadoStep]
+2023-11-29 18:44:58,621 INFO o.s.b.c.s.AbstractStep [main] Step: [arquivoDemilitadoStep] executed in 65ms
+2023-11-29 18:44:58,645 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoDemilitadoBatch]] completed with the following parameters: [{arquivo=file:files\clientes.txt, arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=39, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}] and the following status: [COMPLETED] in 122ms
+2023-11-29 18:44:58,720 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoMultiploBatch]] launched with the following parameters: [{arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=5, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}]
+2023-11-29 18:44:58,781 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [arquivoMultiploStep]
+2023-11-29 18:44:59,080 INFO o.s.b.c.s.AbstractStep [main] Step: [arquivoMultiploStep] executed in 298ms
+2023-11-29 18:44:59,116 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoMultiploBatch]] completed with the following parameters: [{arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=5, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}] and the following status: [COMPLETED] in 380ms
+2023-11-29 18:44:59,175 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeOlaMundoJob]] launched with the following parameters: [{arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=62, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivo=file:files\clientes.txt, nome=Flavio, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}]
+2023-11-29 18:44:59,220 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [imprimeOlaMundoStep]
+2023-11-29 18:44:59,272 INFO o.s.b.c.s.AbstractStep [main] Step: [imprimeOlaMundoStep] executed in 52ms
+2023-11-29 18:44:59,327 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeOlaMundoJob]] completed with the following parameters: [{arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=62, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivo=file:files\clientes.txt, nome=Flavio, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}] and the following status: [COMPLETED] in 126ms
+2023-11-29 18:44:59,444 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeParOuImparJob]] launched with the following parameters: [{arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=62, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivo=file:files\clientes.txt, nome=Flavio, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}]
+2023-11-29 18:44:59,512 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [imprimeParOuImparStep]
+2023-11-29 18:44:59,744 INFO o.s.b.c.s.AbstractStep [main] Step: [imprimeParOuImparStep] executed in 231ms
+2023-11-29 18:44:59,773 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeParOuImparJob]] completed with the following parameters: [{arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=62, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivo=file:files\clientes.txt, nome=Flavio, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}] and the following status: [COMPLETED] in 318ms
+2023-11-29 18:44:59,782 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-11-29 18:44:59,793 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-12-04 18:44:13,643 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] Starting IniciandoSpringBatchMavenApplication using Java 11.0.16 on MacBook-Pro.local with PID 5139 (/Users/flaviosantana/desv/wks/udemy/spring-batch/iniciando-spring-batch/target/classes started by flaviosantana in /Users/flaviosantana/desv/wks/udemy/spring-batch/iniciando-spring-batch)
+2023-12-04 18:44:13,647 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-12-04 18:44:14,400 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropertiesConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2023-12-04 18:44:14,418 WARN o.s.c.a.AnnotationConfigApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanInitializationException: Could not load properties; nested exception is java.io.FileNotFoundException: application-db.properties
+2023-12-04 18:44:45,686 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] Starting IniciandoSpringBatchMavenApplication using Java 11.0.16 on MacBook-Pro.local with PID 5167 (/Users/flaviosantana/desv/wks/udemy/spring-batch/iniciando-spring-batch/target/classes started by flaviosantana in /Users/flaviosantana/desv/wks/udemy/spring-batch/iniciando-spring-batch)
+2023-12-04 18:44:45,700 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-12-04 18:44:46,398 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropertiesConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2023-12-04 18:44:46,806 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-12-04 18:44:46,939 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-12-04 18:44:46,951 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2023-12-04 18:44:47,116 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2023-12-04 18:44:47,217 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] Started IniciandoSpringBatchMavenApplication in 2.309 seconds (JVM running for 4.282)
+2023-12-04 18:44:47,397 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaBatch]] launched with the following parameters: [{arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=41, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}]
+2023-12-04 18:44:47,454 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [arquivoLarguraFixaStep]
+2023-12-04 18:44:47,567 INFO o.s.b.c.s.AbstractStep [main] Step: [arquivoLarguraFixaStep] executed in 112ms
+2023-12-04 18:44:47,585 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoLarguraFixaBatch]] completed with the following parameters: [{arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=41, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}] and the following status: [COMPLETED] in 150ms
+2023-12-04 18:44:47,641 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoDemilitadoBatch]] launched with the following parameters: [{arquivo=file:files\clientes.txt, arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=40, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}]
+2023-12-04 18:44:47,675 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [arquivoDemilitadoStep]
+2023-12-04 18:44:47,725 INFO o.s.b.c.s.AbstractStep [main] Step: [arquivoDemilitadoStep] executed in 50ms
+2023-12-04 18:44:47,741 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoDemilitadoBatch]] completed with the following parameters: [{arquivo=file:files\clientes.txt, arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=40, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}] and the following status: [COMPLETED] in 93ms
+2023-12-04 18:44:47,820 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoMultiploBatch]] launched with the following parameters: [{arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=6, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}]
+2023-12-04 18:44:47,847 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [arquivoMultiploStep]
+2023-12-04 18:44:47,973 INFO o.s.b.c.s.AbstractStep [main] Step: [arquivoMultiploStep] executed in 126ms
+2023-12-04 18:44:47,989 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=arquivoMultiploBatch]] completed with the following parameters: [{arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=6, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}] and the following status: [COMPLETED] in 164ms
+2023-12-04 18:44:48,300 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeOlaMundoJob]] launched with the following parameters: [{arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=63, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivo=file:files\clientes.txt, nome=Flavio, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}]
+2023-12-04 18:44:48,319 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [imprimeOlaMundoStep]
+2023-12-04 18:44:48,337 INFO o.s.b.c.s.AbstractStep [main] Step: [imprimeOlaMundoStep] executed in 18ms
+2023-12-04 18:44:48,351 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeOlaMundoJob]] completed with the following parameters: [{arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=63, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivo=file:files\clientes.txt, nome=Flavio, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}] and the following status: [COMPLETED] in 45ms
+2023-12-04 18:44:48,401 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeParOuImparJob]] launched with the following parameters: [{arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=63, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivo=file:files\clientes.txt, nome=Flavio, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}]
+2023-12-04 18:44:48,426 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [imprimeParOuImparStep]
+2023-12-04 18:44:48,538 INFO o.s.b.c.s.AbstractStep [main] Step: [imprimeParOuImparStep] executed in 112ms
+2023-12-04 18:44:48,561 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeParOuImparJob]] completed with the following parameters: [{arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=63, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivo=file:files\clientes.txt, nome=Flavio, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}] and the following status: [COMPLETED] in 151ms
+2023-12-04 18:44:48,570 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-12-04 18:44:48,591 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
