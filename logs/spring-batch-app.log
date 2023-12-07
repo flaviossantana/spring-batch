@@ -4474,3 +4474,58 @@ Caused by: java.lang.IllegalStateException: Input resource must exist (reader is
 2023-12-04 18:44:48,561 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeParOuImparJob]] completed with the following parameters: [{arquivoMultiploFormato=arquivos/clientes-multiplos-formatos.txt, run.id=63, arquivoClienteDelimitado=arquivos/clientes-delimitados.txt, arquivo=file:files\clientes.txt, nome=Flavio, arquivoCliente=arquivos/clientes-tamanho-fixo.txt}] and the following status: [COMPLETED] in 151ms
 2023-12-04 18:44:48,570 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
 2023-12-04 18:44:48,591 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-12-06 18:49:43,691 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] Starting IniciandoSpringBatchMavenApplication using Java 11.0.16 on MacBook-Pro.local with PID 6455 (/Users/flaviosantana/desv/wks/udemy/spring-batch/iniciando-spring-batch/target/classes started by flaviosantana in /Users/flaviosantana/desv/wks/udemy/spring-batch/iniciando-spring-batch)
+2023-12-06 18:49:43,707 INFO o.u.b.IniciandoSpringBatchMavenApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-12-06 18:49:45,239 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropertiesConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2023-12-06 18:49:45,594 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-12-06 18:49:46,660 ERROR c.z.h.p.HikariPool [main] HikariPool-1 - Exception during pool initialization.
+java.sql.SQLNonTransientConnectionException: Socket fail to connect to host:address=(host=localhost)(port=3306)(type=primary). Connection refused (Connection refused)
+	at org.mariadb.jdbc.client.impl.ConnectionHelper.connectSocket(ConnectionHelper.java:136) ~[mariadb-java-client-3.3.0.jar:?]
+	at org.mariadb.jdbc.client.impl.StandardClient.<init>(StandardClient.java:101) ~[mariadb-java-client-3.3.0.jar:?]
+	at org.mariadb.jdbc.Driver.connect(Driver.java:69) ~[mariadb-java-client-3.3.0.jar:?]
+	at org.mariadb.jdbc.Driver.connect(Driver.java:95) ~[mariadb-java-client-3.3.0.jar:?]
+	at org.mariadb.jdbc.Driver.connect(Driver.java:26) ~[mariadb-java-client-3.3.0.jar:?]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:364) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:476) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-4.0.3.jar:?]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:160) ~[spring-jdbc-5.3.30.jar:5.3.30]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:118) ~[spring-jdbc-5.3.30.jar:5.3.30]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:81) ~[spring-jdbc-5.3.30.jar:5.3.30]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:337) ~[spring-jdbc-5.3.30.jar:5.3.30]
+	at org.springframework.jdbc.support.JdbcUtils.extractDatabaseMetaData(JdbcUtils.java:395) ~[spring-jdbc-5.3.30.jar:5.3.30]
+	at org.springframework.batch.support.DatabaseType.fromMetaData(DatabaseType.java:102) ~[spring-batch-infrastructure-4.3.9.jar:4.3.9]
+	at org.springframework.batch.core.repository.support.JobRepositoryFactoryBean.afterPropertiesSet(JobRepositoryFactoryBean.java:183) ~[spring-batch-core-4.3.9.jar:4.3.9]
+	at org.springframework.boot.autoconfigure.batch.BasicBatchConfigurer.createJobRepository(BasicBatchConfigurer.java:134) ~[spring-boot-autoconfigure-2.7.17.jar:2.7.17]
+	at org.springframework.boot.autoconfigure.batch.BasicBatchConfigurer.initialize(BasicBatchConfigurer.java:102) ~[spring-boot-autoconfigure-2.7.17.jar:2.7.17]
+	at org.springframework.boot.autoconfigure.batch.BasicBatchConfigurer.afterPropertiesSet(BasicBatchConfigurer.java:96) ~[spring-boot-autoconfigure-2.7.17.jar:2.7.17]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921) ~[spring-context-5.3.30.jar:5.3.30]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.30.jar:5.3.30]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:409) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.udemy.batch.IniciandoSpringBatchMavenApplication.main(IniciandoSpringBatchMavenApplication.java:10) ~[classes/:?]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:?]
+	at java.net.Socket.connect(Socket.java:608) ~[?:?]
+	at org.mariadb.jdbc.client.impl.ConnectionHelper.connectSocket(ConnectionHelper.java:130) ~[mariadb-java-client-3.3.0.jar:?]
+	... 38 more
+2023-12-06 18:49:46,679 WARN o.s.c.a.AnnotationConfigApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'batchConfigurer' defined in class path resource [org/springframework/boot/autoconfigure/batch/BatchConfigurerConfiguration$JdbcBatchConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Unable to initialize Spring Batch
