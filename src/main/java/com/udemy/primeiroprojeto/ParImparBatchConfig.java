@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @Configuration
 @EnableBatchProcessing
@@ -49,8 +50,15 @@ public class ParImparBatchConfig {
     }
 
     private FunctionItemProcessor<Integer, String> parOuImparProcessor() {
+        AtomicInteger count = new AtomicInteger();
         return new FunctionItemProcessor<>(
-                numero -> String.format("Numero %s é %s: ", numero, numero % 2 == 0 ? "PAR" : "IMPAR")
+                numero -> {
+                    if(count.get() == 3){
+                        throw new NumberFormatException("Deu Ruim");
+                    }
+                    count.getAndIncrement();
+                    return String.format("Numero %s é %s: ", numero, numero % 2 == 0 ? "PAR" : "IMPAR");
+                }
         );
     }
 
