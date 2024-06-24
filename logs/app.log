@@ -1,0 +1,14 @@
+2024-06-24 19:10:30,360 INFO c.u.p.ProjetoSpringBatchApplication [main] Starting ProjetoSpringBatchApplication using Java 11.0.16 on MacBook-Pro.local with PID 11909 (/Users/flaviosantana/desv/wks/udemy/spring-batch/iniciando-spring-batch/target/classes started by flaviosantana in /Users/flaviosantana/desv/wks/udemy/spring-batch/iniciando-spring-batch)
+2024-06-24 19:10:30,373 INFO c.u.p.ProjetoSpringBatchApplication [main] No active profile set, falling back to 1 default profile: "default"
+2024-06-24 19:10:31,500 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.configurer is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2024-06-24 19:10:32,249 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2024-06-24 19:10:32,401 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2024-06-24 19:10:32,566 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2024-06-24 19:10:32,691 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2024-06-24 19:10:32,811 INFO c.u.p.ProjetoSpringBatchApplication [main] Started ProjetoSpringBatchApplication in 3.141 seconds (JVM running for 4.638)
+2024-06-24 19:10:32,963 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeParOuImparJob]] launched with the following parameters: [{nome-parametro=FLAVIO SOUSA LINDO :), run.id=18}]
+2024-06-24 19:10:33,010 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [imprimeParOuImparStep]
+2024-06-24 19:10:33,146 INFO o.s.b.c.s.AbstractStep [main] Step: [imprimeParOuImparStep] executed in 135ms
+2024-06-24 19:10:33,163 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeParOuImparJob]] completed with the following parameters: [{nome-parametro=FLAVIO SOUSA LINDO :), run.id=18}] and the following status: [COMPLETED] in 173ms
+2024-06-24 19:10:33,172 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-06-24 19:10:33,184 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
